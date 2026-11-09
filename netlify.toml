@@ -1,0 +1,16 @@
+# Netlify publishes the files in this repository as they are. There is no build step.
+[build]
+  publish = "."
+
+# Open /r/CODE, /join, /admin and every other address in the app
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "DENY"
+    Referrer-Policy = "strict-origin-when-cross-origin"
